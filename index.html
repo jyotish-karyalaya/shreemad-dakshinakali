@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Krishna Acharya</title>
+    <meta charset="UTF-8">
+    <style>
+        /* CSS styles */
+        @import url('https://fonts.googleapis.com/css2?family=Siyam+Rupali&display=swap');
+
+        body {
+            font-family: 'Siyam Rupali', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            /* Change the background color as desired */
+        }
+
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 80px;
+            /* Adjust the width as needed */
+            height: 80px;
+            /* Adjust the height as needed */
+            margin-right: 10px;
+            /* Adjust the spacing as needed */
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title h1 {
+            margin-bottom: 5px;
+            /* Adjust the spacing between the title and the name */
+        }
+
+        .name {
+            font-size: 18px;
+            /* Adjust the font size as needed */
+        }
+
+        .slideshow-container {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .slideshow {
+            display: flex;
+            animation: slide 12s infinite;
+        }
+
+        .slideshow img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 10px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow img.active {
+            opacity: 1;
+        }
+
+        @keyframes slide {
+
+            0%,
+            20% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            25%,
+            95% {
+                transform: translateX(-100%);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .qualifications {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .services {
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .fbl {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="Horoscope.png" alt="Logo" class="logo">
+        <div class="title">
+            <h1>শ্রীমদ দক্ষিণাকালী জ্যোতিষ কার্যালয়</h1>
+            <span class="name">-জ্যোতিষ ভারতী কৃষ্ণ আচার্য্য</span>
+        </div>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="slideshow">
+            <img src="image1.jpeg" alt="ছবি ১" class="active">
+            <img src="image2.jpeg" alt="ছবি ২" class="active">
+            <img src="image3.jpeg" alt="ছবি ৩" class="active">
+            <img src="image4.jpeg" alt="ছবি ৪" class="active">
+        </div>
+    </div>
+
+    <section class="qualifications">
+        <h3>নালন্দা বঙ্গীয় জ্যোতিষ, বাস্তু, তন্ত্র ও জনকল্যাণ সোসাইটি দ্বারা স্বীকৃত ও স্বর্ণ পদক প্রাপ্ত</h3>
+    </section>
+
+    <section class="services">
+        <h3>এখানে</h3>
+        <ul>
+            <li>সব গ্রহ নক্ষত্রের দোষের প্রতিকার ও কবচ পাওয়া যায়</li>
+            <li>বাস্তু, বিদ্যা, কর্মক্ষেত্র ও সাংসারিক বিপদের প্রতিকার</li>
+            <li>কুষ্ঠি/কুন্ডলী তৈরী করা হয়</li>
+            <li>মাঙ্গলিক দোষ, কালসর্প দোষের প্রতিকার ও সমস্ত জ্যোতিষ - বাস্তু সংক্রান্ত কাজ করা হয়</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>ঠিকানা: মহিষাদল কাঁঠাল পট্টি (ক্যানাল পাড়), মহিষাদল, পূর্ব মেদিনীপুর</p>
+        <p>যোগাযোগ: ফোন: ৯৬১৪৬১৬২০১ | ইমেল: krishna72acharya@gmail.com</p>
+        <p>বি:দ্র- বৃহস্পতিবার চেম্বার বন্ধ থাকে</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=100023777466283&mibextid=ZbWKwL"><img src="fb.png"
+                    alt="Facebook" class="fbl"></a>
+        </div>
+    </footer>
+
+    <script>
+        var images = document.querySelectorAll('.slideshow img');
+        var currentIndex = 0;
+
+        function showImage(index) {
+            for (var i = 0; i < images.length; i++) {
+                images[i].classList.remove('active');
+            }
+            images[index].classList.add('active');
+        }
+
+        setInterval(function () {
+            showImage(currentIndex);
+            currentIndex = (currentIndex + 1) % images.length;
+        }, 3000);
+    </script>
+
+</body>
+
+</html>
